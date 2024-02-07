@@ -1,75 +1,96 @@
-.Homepage{ 
+.Homepage {
     outline: 1px solid green;
     padding: 15px;
 }
 
 
-.HP-Section{ 
+.HP-Section {
     /* outline: 1px solid white;     */
 }
-    .HP-Section-Header{ 
-        background-color: hsla(207, 100%, 57%, 0.5);
-        padding: 15px;
-        border-radius: 15px;
-        margin-bottom: 15px;;
-    }
-    .HP-Section-Blogs{ 
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        
-    }
-        .HP-Blog-Card{ 
-            background-color: rgba(255, 255, 255, 0.50);
-            flex: 1;
-            border-radius: 15px;
-            padding: 15px;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+.HP-Section-Header {
+    background-color: hsla(207, 100%, 57%, 0.5);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    ;
+}
 
-            max-width: 337px;
-            min-width: 300px;
-            min-height: 200px;
+.HP-Section-Blogs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 
-            overflow: hidden;
-        }
-            .HP-Post-Title{ 
-                font-size: 1.4rem;
-                font-weight: bold;
-            }
-            .HP-Post-Author{
-            }
-            
-            .HP-Post-Time{
-                font-size: smaller;
-                font-weight: lighter;
-            }
-            .HP-Post-Bottom{
-                display: flex;
-                justify-content: space-between;
-                max-height: 30px;
-            }
-                .HP-Post-Btn-Container{
-                    display: flex;
-                    align-items: center;
-                }
-                    .HP-Post-Btn{
-                        background-color: #ff91a4;
-                        border: none;
-                        border-radius: 15px;
-                        width: 75px;
-                        height: 30px;
-                    }
-                    .HP-Post-Btn:hover{
-                        background-color: #ffadbb;
-                    }
-                .HP-Post-Intercation-Container{
-                    display: flex;
-                    gap: 15px;
-                }
-                    .HP-Post-Intercation-Img{ 
-                        max-height: 30px;
-                    }
+}
+
+.HP-Blog-Card {
+    background-color: rgba(255, 255, 255, 0.50);
+    flex: 1;
+    border-radius: 15px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 337px;
+    min-width: 300px;
+    min-height: 200px;
+
+    overflow: hidden;
+}
+
+.HP-Post-Title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.HP-Post-Author {}
+
+.HP-Post-Time {
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+.HP-Post-Bottom {
+    display: flex;
+    justify-content: space-between;
+    max-height: 30px;
+}
+
+.HP-Post-Btn-Container {
+    display: flex;
+    align-items: center;
+}
+
+.HP-Post-Btn {
+    background-color: #ff91a4;
+    color: white;
+    text-align: center;
+    align-items: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 15px;
+    width: 75px;
+    height: 30px;
+    display: flex;
+    /* Add flex display */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+}
+
+.HP-Post-Btn:hover {
+    background-color: #ffadbb;
+}
+
+.HP-Post-Intercation-Container {
+    display: flex;
+    gap: 15px;
+}
+
+.HP-Post-Intercation-Img {
+    max-height: 30px;
+}

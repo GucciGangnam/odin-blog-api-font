@@ -1,4 +1,4 @@
-.Navbar { 
+.Navbar {
     outline: 1px solid green;
     /* props */
     display: flex;
@@ -10,61 +10,87 @@
     /* style */
     background-color: #259dff;
     color: black;
-    
+
 }
-    .NB-left{ 
-        height: 100%;
-        display: flex;
-        justify-content: start;
+
+.NB-left {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    outline: 1px solid red;
+    flex: 1;
+}
+
+.NB-Home-Btn {
+        background-color: #ff91a4;
+        color: white;
+        text-align: center;
         align-items: center;
-        outline: 1px solid red;
-        flex: 1;
-    }
-    .NB-mid{ 
-        height: 100%;
+        border: none;
+        text-decoration: none;
+        border-radius: 15px;
+        width: 75px;
+        height: 30px;
         display: flex;
+        /* Add flex display */
         justify-content: center;
+        /* Center content horizontally */
         align-items: center;
-        outline: 1px solid rgb(0, 255, 4);
-        flex: 1;
-        gap: 15px;
+        /* Center content vertically */
     }
-        .NB-input{ 
-            background-color: rgb(255, 255, 255);
-            border: 1px solid black;
-            border-radius: 15px;
-            height: 20px;
-        }
-        .NB-search-btn{ 
-            background-color: #ff91a4;
-            border: none;
-            border-radius: 15px;
-            width: 30px;
-            height: 30px;
-        }
-            .NB-search-btn:hover{ 
-                background-color: #ffadbb;
-            }
-    .NB-right{ 
-        max-width: 600px;
-        height: 100%;
-        flex:1;
-        outline: 1px solid rgb(0, 81, 255);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-.NB-btn{ 
+
+.NB-mid {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid rgb(0, 255, 4);
+    flex: 1;
+    gap: 15px;
+}
+
+.NB-input {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 20px;
+}
+
+.NB-search-btn {
     background-color: #ff91a4;
-    border: none; 
+    border: none;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+.NB-search-btn:hover {
+    background-color: #ffadbb;
+}
+
+.NB-right {
+    max-width: 600px;
+    height: 100%;
+    flex: 1;
+    outline: 1px solid rgb(0, 81, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NB-btn {
+    background-color: #ff91a4;
+    border: none;
     border-radius: 15px;
     width: 75px;
     height: 30px;
 }
-    .NB-btn:hover{ 
-        background-color: #ffadbb;
-        border: none; 
-        border-radius: 15px;
-        width: 75px;
-        height: 30px;
-    }
+
+.NB-btn:hover {
+    background-color: #ffadbb;
+    border: none;
+    border-radius: 15px;
+    width: 75px;
+    height: 30px;
+}

@@ -2,6 +2,8 @@
 
 // impprt react 
 import React from 'react';// Import Styles 
+// Import Links
+import { Link } from 'react-router-dom';
 
 // Imports styles
 import "./Navbar.css"
@@ -13,7 +15,9 @@ import "./Navbar.css"
 export const Navbar = () => {
     return (
         <div className="Navbar">
-            <div className="NB-left">Lorum Ipsum</div>
+            <div className="NB-left">
+                <Link to={`/`} className="NB-Home-Btn">Home</Link>
+            </div>
             <div className="NB-mid">
                 <input className="NB-input"></input>
                 <button className="NB-search-btn">?</button>

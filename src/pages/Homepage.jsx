@@ -1,19 +1,22 @@
 // Impport react 
 import React from 'react';
-
+// Import Links 
+import { Link } from 'react-router-dom';
 // Import styles 
 import "./Homepage.css"
-
-// Import components
-
 // Import hooks 
 import { useState, useEffect } from "react";
+// Import components
 
 // Component 
 export const Homepage = () => {
 
+    //States
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true); // Track loading state
+
+    // Functions
+
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -53,16 +56,16 @@ export const Homepage = () => {
                                 <div className="HP-Post-Time">{blog.POST_TIMESTAMP}</div>
                                 <div className="HP-Post-Bottom">
                                     <div className="HP-Post-Btn-Container">
-                                        <button className="HP-Post-Btn">Read</button>
+                                        <Link to={`/post/${blog.POST_ID}`} className="HP-Post-Btn">Read</Link>
                                     </div>
                                     <div className="HP-Post-Intercation-Container">
                                         <div>
-                                        <img className="HP-Post-Intercation-Img" src="public/icons/Heart.png" alt="HeartIcon"></img>
-                                        {blog.POST_LIKES.length}
+                                            <img className="HP-Post-Intercation-Img" src="public/icons/Heart.png" alt="HeartIcon"></img>
+                                            {blog.POST_LIKES.length}
                                         </div>
                                         <div>
-                                        <img className="HP-Post-Intercation-Img" src="public/icons/Comment.png" alt="CommentIcon"></img>
-                                        {blog.POST_COMMENTS.length}
+                                            <img className="HP-Post-Intercation-Img" src="public/icons/Comment.png" alt="CommentIcon"></img>
+                                            {blog.POST_COMMENTS.length}
                                         </div>
                                     </div>
                                 </div>
