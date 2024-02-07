@@ -1,0 +1,16 @@
+.App{ 
+  display: flex;
+  flex-direction: column;
+
+}
+
+.App-NB{ 
+  position: fixed;
+  width: 100%
+
+}
+
+.App-Content{ 
+  margin-top: 65px;
+  height: fit-content;
+}
