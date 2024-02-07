@@ -1,4 +1,9 @@
-// Import Styles 
+
+
+// impprt react 
+import React from 'react';// Import Styles 
+
+// Imports styles
 import "./Navbar.css"
 
 // Import compoenents 

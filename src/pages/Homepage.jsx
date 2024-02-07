@@ -1,3 +1,6 @@
+// Impport react 
+import React from 'react';
+
 // Import styles 
 import "./Homepage.css"
 
