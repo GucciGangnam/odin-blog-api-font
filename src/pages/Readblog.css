@@ -1,0 +1,24 @@
+.Readblog {
+    padding: 15px;
+}
+
+.RB-Blog-Header {
+    background-color: hsla(207, 100%, 57%, 0.5);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.RB-Content {
+    background-color: hsla(207, 100%, 57%, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.RB-Comments-Section {
+    background-color: hsla(0, 0%, 100%, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}

@@ -9,33 +9,13 @@ import { useState, useEffect } from "react";
 // Import components
 
 // Component 
-export const Homepage = () => {
+export const Homepage = ({blogs, loading}) => {
 
     //States
-    const [blogs, setBlogs] = useState([]);
-    const [loading, setLoading] = useState(true); // Track loading state
 
     // Functions
 
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/posts');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch posts');
-                }
-                const data = await response.json();
-                console.log(data.allposts); // Log the fetched posts
-                setBlogs(data.allposts);
-            } catch (error) {
-                console.error('Error fetching posts:', error);
-            } finally {
-                setLoading(false); // Set loading state to false after fetch completes
-            }
-        };
-        fetchPosts();
-    }, []);
+    // Render
     return (
         <div className="Homepage">
 
@@ -77,17 +57,3 @@ export const Homepage = () => {
         </div>
     )
 }
-
-
-// <div className='posts'>
-//     {loading ? (
-//         <p>Loading posts...</p>
-//     ) : (
-//         blogs.map(blog => (
-//             <div key={blog.POST_ID}>
-//                 <h3>{blog.POST_TITLE}</h3>
-//                 <p>{blog.POST_CONTENT}</p>
-//             </div>
-//         ))
-//     )}
-// </div>

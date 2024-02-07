@@ -1,5 +1,5 @@
 .Homepage {
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
     padding: 15px;
 }
 
@@ -13,7 +13,6 @@
     padding: 15px;
     border-radius: 15px;
     margin-bottom: 15px;
-    ;
 }
 
 .HP-Section-Blogs {
