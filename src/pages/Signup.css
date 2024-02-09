@@ -1,0 +1,66 @@
+.Signup{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Signup-Form-Container{ 
+    outline: 1px solid white;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255);
+    width: 400px;
+    /* height: 400px; */
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    
+    
+}
+.Form-Title{ 
+    text-align: center;
+    padding: 25px;
+    color: black;
+}
+.Signup-Form{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: black;
+    
+}
+.Input-section{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+label{ 
+    color: black;
+}
+input{ 
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+}
+.Signup-Form-Button{ 
+    margin: 25px;
+    background-color: #ff91a4;
+    border: none;
+    border-radius: 15px;
+    width: 75px;
+    height: 30px;
+}
+
+.Signup-Form-Button:hover {
+    background-color: #ffadbb;
+}
+
+.Signup-Error{ 
+    color: red;
+}

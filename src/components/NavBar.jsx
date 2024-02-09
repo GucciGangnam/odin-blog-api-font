@@ -1,5 +1,3 @@
-
-
 // impprt react 
 import React from 'react';// Import Styles 
 // Import Links
@@ -24,7 +22,7 @@ export const Navbar = () => {
             </div>
             <div className="NB-right">
                 <button className="NB-btn">Create</button>
-                <button className="NB-btn">Sign up</button>
+                <Link to={`/signup`} className="HP-Post-Btn">Sign up</Link>
                 <button className="NB-btn">Log in</button>
             </div>
         </div>

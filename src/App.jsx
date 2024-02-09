@@ -11,6 +11,7 @@ import { Navbar } from './components/navBar';
 // Impor Pages(components)
 import { Homepage } from './pages/HomePage';
 import { Readblog } from './pages/ReadBlog';
+import { Signup } from './pages/Signup';
 
 
 
@@ -44,25 +45,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage blogs={blogs} loading={loading}/>}/>
         <Route path="/post/:id" element={<Readblog blogs={blogs} loading={loading}/>}/>
+        <Route path="/signup" element={<Signup/>}/>
       </Routes>
     </div>
   )
 }
-
-
-
-
-
-// function App() { 
-//   return ( 
-//     <div className='App'>
-//       <div className='App-NB'>
-//         <Navbar/>
-//       </div>
-//       <div className='App-Content'>
-//         <Homepage/>
-//       </div>
-//     </div>
-//   )
-// }
 export default App;
