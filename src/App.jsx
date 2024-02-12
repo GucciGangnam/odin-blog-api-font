@@ -12,6 +12,7 @@ import { Navbar } from './components/navBar';
 import { Homepage } from './pages/HomePage';
 import { Readblog } from './pages/ReadBlog';
 import { Signup } from './pages/Signup';
+import { Login } from './pages/Login';
 
 
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="/" element={<Homepage blogs={blogs} loading={loading}/>}/>
         <Route path="/post/:id" element={<Readblog blogs={blogs} loading={loading}/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </div>
   )

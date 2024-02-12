@@ -1,99 +1,173 @@
-
-
-.Signup{ 
+.Signup {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 250px);
+    height: calc(100vh - 65px);
 }
 
-.FormErrors{ 
-    min-height: 185px;
-    min-width: 400px;
-    max-width: 400px;
-    padding: 15px;
-    border-radius: 15px;
-    outline: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    word-wrap: normal;
-}
-.SignupMessage{ 
-    font-size: 2rem;
-    font-weight: bolder;
-    text-align: center;
-    opacity: 100; /* Start with opacity set to 0 */
-    transition: opacity 0.5s ease; /* Add transition effect for opacity */
-}
-.SignupFormUL{ 
-    display: block;
-    margin: 0px;
-}
-.SignupErrorList{ 
-    display: block;
-}
-
-.SignupForm{ 
+.SignupForm {
+    position: relative;
     outline: 1px solid pink;
-
     width: 400px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-
     background-color: white;
     color: black;
 }
 
-
-
-
-
-.SignupFormLabel{ 
-    font-weight: bold;
-
+.SignupMessage {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    opacity: 100;
+    /* Start with opacity set to 0 */
+    transition: opacity 0.5s ease;
+    /* Add transition effect for opacity */
 }
-.Signup input{ 
-    margin-bottom: 10px;
-    padding: 10px;;
-}
-.InvalidInput{
-    background-color: rgb(237, 237, 237);
+
+.FormErrors {
     color: black;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;;
-    padding: 10px;;
+    min-height: 140px;
+    min-width: 400px;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    display: bloc;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    word-wrap: normal;
 }
-.InvalidInput:focus{ 
-    background-color: rgb(237, 237, 237);
+
+.SignupFormUL {
+    display: block;
+    margin: 0px;
     color: black;
-    outline: 3px solid #5eb7ff;; /* Disable default outline */
-    box-shadow: 0 0 15px #ffffff; /* Add a custom box shadow */
-    padding: 10px;;
-    
+    padding: 0px;
 }
-.ValidInput{
-    background-color: rgb(237, 237, 237);
+
+.SignupErrorList {
+    display: block;
     color: black;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;;
-    outline: 3px solid #15ff00;; /* Disable default outline */
-    padding: 10px;;
 }
-    .ValidInput:focus{ 
-        background-color: rgb(237, 237, 237);
-        color: black;
-        padding: 5px;
-        border-radius: 5px;
-        border: none;;
-        outline: 3px solid #15ff00;; /* Disable default outline */
-        padding: 10px;;
-        
+
+/* sign up button */
+
+.FormSubmitShow {
+    position: absolute;
+    bottom: 40px;
+    left: 170px;
+    background-color: #1fd50e;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    animation: popIn 0.5s ease forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding box shadow */
+    border: 2px solid #fff; /* Adding border */
+}
+
+.FormSubmitHide {
+    position: absolute;
+    bottom: 40px;
+    left: 170px;
+    background-color: #1fd50e;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    animation: popOut 0.5s ease forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding box shadow */
+    border: 2px solid #fff; /* Adding border */
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0%;
+        transform: scale(0.8);
     }
+    1% { 
+        opacity: 100%;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes popOut {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+    99% { 
+        opacity: 100%;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0%;
+    }
+}
+
+
+
+
+/* Labels and inputs */
+.SignupFormLabel {
+    font-weight: bold;
+}
+
+.Signup input {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.InvalidInput {
+    background-color: rgb(237, 237, 237);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+.InvalidInput:focus {
+    background-color: rgb(237, 237, 237);
+    color: black;
+    outline: 3px solid #5eb7ff;
+    box-shadow: 0 0 15px #ffffff;
+    padding: 10px;
+
+}
+
+.ValidInput {
+    background-color: rgb(237, 237, 237);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: 3px solid #1fd50e;
+    padding: 10px;
+}
+
+.ValidInput:focus {
+    background-color: rgb(237, 237, 237);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: 3px solid  #1fd50e;
+    padding: 10px;
+}

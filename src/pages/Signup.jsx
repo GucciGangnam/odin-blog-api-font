@@ -1,6 +1,8 @@
 
 // Import React 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+
+
 
 // Import Styles 
 import "./Signup.css"
@@ -11,7 +13,6 @@ export const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
 
     // Form validity states
     const [nameValid, setNameValid] = useState(false);
@@ -21,12 +22,14 @@ export const Signup = () => {
     const [passwordMatch, setPasswordMatch] = useState(false);
     const [formErrors, setFormErrors] = useState([])
     const [formValid, setFormValid] = useState(false)
-
     useEffect(() => {
         if (nameValid && usernameValid && emailValid && passwordValid && passwordMatch) {
             setFormValid(true);
+        } else {
+            setFormValid(false)
         }
     }, [nameValid, usernameValid, emailValid, passwordValid, passwordMatch,])
+
 
 
 
@@ -50,6 +53,7 @@ export const Signup = () => {
         setNameValid(isValid && isThere);
         // Set formErrors to the array of error messages
         setFormErrors(errors);
+
     };
     // Function to handle username change
     const handleUsernameChange = (event) => {
@@ -130,40 +134,39 @@ export const Signup = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        
+    
         try {
             const response = await fetch('http://localhost:3000/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, username, email, password }),
             });
-            if (!response.ok) {
-                throw new Error(await response.text()); // Extract error message from response
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Response OK!", data);
+            } else { 
+                const data = await response.json();
+                setFormErrors([data.error])
+                if (data.error == "Email already in use"){ 
+                    setEmailValid(false);
+                }
+                if (data.error == "This username is already in use"){ 
+                    setUsernameValid(false);
+                }
+                
             }
-            const data = await response.json();
-            console.log('Success:', data); // Handle successful response in your app
         } catch (error) {
-            setError(error.message); // Set error message for display in the UI
-            console.log(error);
+            console.error(error);
         }
     };
 
+
+
     return (
         <div className='Signup'>
-            <div className='FormErrors'>
-
-                <div 
-                className='SignupMessage'
-                style={{ opacity: formErrors.length === 0 ? 1 : 0 }}
-                >Sign Up</div>
-                <ul className='SignupFormUL'>
-                    {formErrors.map((err, index) => (
-                        <li className='SignupErrorList' key={index}>{err}</li>
-                    ))}
-                </ul>
-
-            </div>
             <form className='SignupForm' onSubmit={handleSubmit}>
+                <div className='SignupMessage'>Sign Up</div>
                 <label className='SignupFormLabel' htmlFor="name">Name:</label>
                 <input
                     type="text"
@@ -176,7 +179,7 @@ export const Signup = () => {
                     className={nameValid ? "ValidInput" : "InvalidInput"}
                 />
 
-                <label className='SignupFormLabel' htmlFor="username">userName:</label>
+                <label className='SignupFormLabel' htmlFor="username">Username:</label>
                 <input
                     type="text"
                     id="username"
@@ -222,13 +225,21 @@ export const Signup = () => {
                     className={passwordMatch ? "ValidInput" : "InvalidInput"}
                 />
 
-                <button type="submit" disabled={!formValid}>
+                <div className='FormErrors'>
+                    <ul className='SignupFormUL'>
+                        {formErrors.map((err, index) => (
+                            <li className='SignupErrorList' key={index}>{err}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <button type="submit" className={formValid ? 'FormSubmitShow' : 'FormSubmitHide'}>
                     Submit
                 </button>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
             </form>
         </div>
     );
 };
+
 
 
