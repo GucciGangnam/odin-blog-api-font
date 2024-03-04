@@ -1,6 +1,7 @@
 
 // Import React 
 import React, { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
 
 
@@ -8,6 +9,8 @@ import React, { useState, useEffect} from 'react';
 import "./Signup.css"
 
 export const Signup = () => {
+    const navigate = useNavigate();
+
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -137,7 +140,7 @@ export const Signup = () => {
         
     
         try {
-            const response = await fetch('http://localhost:3000/users', {
+            const response = await fetch('http://localhost:3000/users/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, username, email, password }),
@@ -145,6 +148,7 @@ export const Signup = () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log("Response OK!", data);
+                navigate('/login');
             } else { 
                 const data = await response.json();
                 setFormErrors([data.error])

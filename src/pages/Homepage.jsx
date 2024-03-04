@@ -40,11 +40,11 @@ export const Homepage = ({blogs, loading}) => {
                                     </div>
                                     <div className="HP-Post-Intercation-Container">
                                         <div>
-                                            <img className="HP-Post-Intercation-Img" src="public/icons/Heart.png" alt="HeartIcon"></img>
+                                            <img className="HP-Post-Intercation-Img" src="/icons/Heart.png" alt="HeartIcon"></img>
                                             {blog.POST_LIKES.length}
                                         </div>
                                         <div>
-                                            <img className="HP-Post-Intercation-Img" src="public/icons/Comment.png" alt="CommentIcon"></img>
+                                            <img className="HP-Post-Intercation-Img" src="/icons/Comment.png" alt="CommentIcon"></img>
                                             {blog.POST_COMMENTS.length}
                                         </div>
                                     </div>

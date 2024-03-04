@@ -15,9 +15,46 @@ export const Readblog = ({ blogs, loading }) => {
     // Variables 
     const { id } = useParams();
     const blogByID = blogs.find(blog => blog.POST_ID === id);
-    console.log(blogByID)
 
     // States 
+    const [commentData, setCommentData] = useState("");
+
+    // Input change handlers
+    const handleCommenntChange = (e) => {
+        const newComment = e.target.value;
+        setCommentData(newComment);
+    }
+
+    // Button Hgandlers 
+    const postComment = async (e) => {
+        e.preventDefault();
+        const userAccessToken = localStorage.getItem("UserAccessToken")
+        try {
+            const response =  await fetch(`http://localhost:3000/posts/comment`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': userAccessToken
+                    },
+                    body: JSON.stringify({
+                        postID: id,
+                        comment: commentData
+                    }),
+                    credentials: 'include',
+                });
+            if (response.ok) {
+                console.log('response is OK!');
+            } else {
+                console.log("response not OK")
+                const error = await response.json();
+                console.log(error)
+            }
+
+        } catch (err) {
+            console.error(err)
+        }
+    }
 
 
     // Redner
@@ -42,19 +79,22 @@ export const Readblog = ({ blogs, loading }) => {
             <div className='RB-Comments-Section'>
                 {loading ? (
                     <p>Loading comments...</p>
-                ) :(
+                ) : (
                     blogByID && blogByID.POST_COMMENTS.length > 0 ? (
                         blogByID.POST_COMMENTS.map(comment => (
-                            <div key={comment.COMMENT_ID}> {comment.text} </div>
+                            <div key={comment.COMMENT_ID}> {comment.COMMENT_CONTENT} {comment.COMMENT_TIMESTAMP} </div>
                         ))
                     ) : (
                         <p>No comments</p>
                     )
-                    )}
+                )}
             </div>
             <button> Like </button>
             <br />
-            <input type='area' placeholder='1000 max' />
+            <form onSubmit={postComment}>
+                <input type='area' maxLength={1000} placeholder='1000 max' onChange={handleCommenntChange} />
+                <button type='submit'>Comment</button>
+            </form>
 
 
         </div>

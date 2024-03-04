@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // Import Routes 
 import { Route, Routes } from 'react-router-dom'
-
 // Import styles 
 import './App.css';
+
+
 
 // Imprt components 
 import { Navbar } from './components/navBar';
@@ -18,8 +18,13 @@ import { Login } from './pages/Login';
 
 function App() {
   // States
+  const [userAccessToken, setUserAccessToken] = useState("")
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true); // Track loading state
+  // Ese effect to console.log UAT when its changed 
+  useEffect(() => { 
+    console.log(userAccessToken)
+  }, [userAccessToken])
   // API FETCH ALL BLOGS
   // API FETCH
   useEffect(() => {
@@ -47,7 +52,7 @@ function App() {
         <Route path="/" element={<Homepage blogs={blogs} loading={loading}/>}/>
         <Route path="/post/:id" element={<Readblog blogs={blogs} loading={loading}/>}/>
         <Route path="/signup" element={<Signup/>}/>
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login setUserAccessToken={setUserAccessToken}/>} />
       </Routes>
     </div>
   )
